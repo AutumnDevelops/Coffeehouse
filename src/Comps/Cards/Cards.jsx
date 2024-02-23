@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import Product_cards from "../../utils/menu.json";
 import { connect } from 'react-redux';
-import { combineReducers } from 'redux';
 import {addToCart} from "../../Redux/actions"
 import { useDispatch } from 'react-redux';
 
-const ProductCards = () => {
+const ProductCards = ({cartOpen, handleCartOpenClose }) => {
   const dispatch = useDispatch();
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [cartItems, setCartItems] = useState([]);
@@ -18,6 +17,9 @@ const ProductCards = () => {
     setCartItems(updatedCartItems);
     console.log(updatedCartItems);
     dispatch(addToCart(card));
+    if(!cartOpen){
+      handleCartOpenClose(); 
+    }
   };
 
   return (

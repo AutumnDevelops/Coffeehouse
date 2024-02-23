@@ -13,9 +13,9 @@ return (
         ))}
 </section>
     <div id  = "check_out_buttons">
-              <div id  = "total_area">
-                  <label htmlFor = "total">Total</label>
-                  <h3>$<span className = "total">{total.toFixed(2)}</span></h3>
+          <div id  = "total_area">
+                <label htmlFor = "total">Total</label>
+                <h3>$<span className = "total">{total.toFixed(2)}</span></h3>
             </div>
     <div style = {{display: "flex",  width: "100%", position: "absolute", bottom: "0", left: "20px"}}>
       <button id = "check_out_button">Check Out</button>

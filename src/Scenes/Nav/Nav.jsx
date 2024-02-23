@@ -1,16 +1,11 @@
 import {useState} from "react";
-import Cart from "./Cart";
 import { CiShoppingCart } from "react-icons/ci";
 import { IoMdClose } from "react-icons/io";
 import { FiAlignJustify } from "react-icons/fi";
 import {Link} from "react-router-dom"
 
 
-const Nav = () => {
-  const [isActive, setIsActive] = useState(false);
-  const [cartOpen, setCartOpen] = useState(false);
-  const handleOpenMenuClick = () => {setIsActive(!isActive)};
-  const handleCartOpenClose = () => {setCartOpen(!cartOpen)};
+const Nav = ({isActive, cartOpen, handleOpenMenuClick, handleCartOpenClose}) => {
   return (
 <>
   <header>
@@ -23,9 +18,6 @@ const Nav = () => {
               <li className = "li_button" id = "cart_open" onClick={handleCartOpenClose}><i name="cart-outline" className = "cart_link" id = "cart_link"><CiShoppingCart /></i><i style = {{display:"none"}} name="close-outline" className = "cart_link" id = "cart_close"><IoMdClose /></i></li>
       </ul>
   </header>
-  <section id = "cart" className={cartOpen ? "active" : ""}>
-      <Cart />
-  </section>
 </>
   )
 }

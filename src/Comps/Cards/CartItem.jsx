@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import { IoMdClose } from "react-icons/io";
 import {removeFromCart, updateCartItemQuantity} from '../../Redux/actions';
 
-const CartItem = ({ item, image, price, quantity, removeFromCart }) => {
+const CartItem = ({ item, image, price, removeFromCart }) => {
   return (
     <div className="cart_item">
         <div className="cart_image">
